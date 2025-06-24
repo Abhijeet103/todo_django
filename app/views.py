@@ -19,16 +19,13 @@ def add_todo(request) :
         return  redirect('index')
 
 
-def update_todo(request) :
-    if request.method == "PUT" :
-        id  =  request.POST.get('id')
+def update_todo(request  , id) :
+    if request.method == "POST" :
         todo  =  request.POST.get('todo')
         data[id] =  todo
         return  redirect('index')
 
 
-def  delete_todo(request) :
-    if request.method == 'DELETE' :
-        id  = request.POST.get('id')
+def  delete_todo(request , id) :
         del  data[id]
         return redirect('index')

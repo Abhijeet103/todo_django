@@ -1,0 +1,19 @@
+<div class="modal fade" id="updateModal{{ id }}" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <form method="POST" action="{% url 'update_todo' id=id %}">
+      {% csrf_token %}
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Update Todo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" name="todo" class="form-control" value="{{ todo }}" required>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-warning">Update</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
