@@ -8,18 +8,18 @@
   {% include 'add_modal.html' %}
 
   <ul class="list-group">
-    {% for id, todo in data %}
+    {% for i in data %}
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        {{ todo }}
+        {{ i.todo }}
 
         <div>
           <!-- Update -->
-          <button class="btn btn-sm btn-warning me-2" data-bs-toggle="modal" data-bs-target="#updateModal{{ id }}">Update</button>
-          {% include 'update_modal.html' %}
+          <button class="btn btn-sm btn-warning me-2" data-bs-toggle="modal" data-bs-target="#updateModal{{ i.id }}">Update</button>
+          {% include 'update_modal.html' with todo=i %}
 
           <!-- Delete -->
-          <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ id }}">Delete</button>
-          {% include 'delete_modal.html' %}
+          <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ i.id }}">Delete</button>
+          {% include 'delete_modal.html' with todo=i %}
         </div>
       </li>
     {% endfor %}

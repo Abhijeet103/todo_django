@@ -1,6 +1,6 @@
-<div class="modal fade" id="deleteModal{{ id }}" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="deleteModal{{ todo.id }}" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog">
-    <form method="POST" action="{% url 'delete_todo' id=id %}">
+    <form method="POST" action="{% url 'delete_todo' id=todo.id %}">
       {% csrf_token %}
       <div class="modal-content">
         <div class="modal-header">
